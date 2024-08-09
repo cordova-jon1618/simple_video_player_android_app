@@ -1,15 +1,22 @@
+
 package com.example.simple_video_player_android_app
+
+import android.os.Bundle
+import com.google.android.material.snackbar.Snackbar
+import androidx.appcompat.app.AppCompatActivity
+import androidx.navigation.findNavController
+import androidx.navigation.ui.AppBarConfiguration
+import androidx.navigation.ui.navigateUp
+import androidx.navigation.ui.setupActionBarWithNavController
+import android.view.Menu
+import android.view.MenuItem
+import com.example.simple_video_player_android_app.databinding.ActivityMainBinding
 
 import android.R
 import android.net.Uri
-import android.os.Bundle
-import android.view.View
+import android.net.Uri.*
 import android.widget.MediaController
 import android.widget.VideoView
-import androidx.appcompat.app.AppCompatActivity
-import androidx.navigation.ui.AppBarConfiguration
-import com.example.simple_video_player_android_app.databinding.ActivityMainBinding
-
 
 class MainActivity : AppCompatActivity() {
 
@@ -39,13 +46,9 @@ class MainActivity : AppCompatActivity() {
         )
 
         //Setting MediaController and URI, then starting the videoView
-
         videoView.setMediaController(mediaController)
-
         videoView.setVideoURI(uri)
-
         videoView.requestFocus()
-
         videoView.start()
     }
 
